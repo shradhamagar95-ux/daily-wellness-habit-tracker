@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Wellness Tracker</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Daily Wellness</h1>
+      <div class="datenav">
+        <button id="prev" aria-label="Previous day">‹</button>
+        <output id="dlabel" aria-live="polite"></output>
+        <button id="next" aria-label="Next day">›</button>
+        <button id="today">Today</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="left">
+        <div class="card hero">
+          <svg id="rings" class="rings" viewBox="0 0 200 200" role="img" aria-label="Habit progress rings"></svg>
+          <div>
+            <div class="big" id="pct">0%</div>
+            <div class="sub" id="count">0 of 5 habits done</div>
+          </div>
+          <p class="msg" id="msg"></p>
+          <div class="stats">
+            <div><b id="s-streak">0</b><span>day streak</span></div>
+            <div><b id="s-week">0%</b><span>this week</span></div>
+            <div><b id="s-month">0%</b><span>this month</span></div>
+          </div>
+          <div class="sub">Streak counts days with 3 or more habits done.</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="card">
+          <h2>Habits</h2>
+          <ul id="habits"></ul>
+          <details>
+            <summary>Edit daily goals</summary>
+            <div class="goals" id="goals"></div>
+          </details>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Progress</h2>
+          <div class="tabs" role="group" aria-label="Summary range">
+            <button data-r="day" aria-pressed="true">Daily</button>
+            <button data-r="week" aria-pressed="false">Weekly</button>
+            <button data-r="month" aria-pressed="false">Monthly</button>
+          </div>
+          <div id="sumline" class="sub" style="margin-bottom:8px"></div>
+          <svg id="chart" class="chart" role="img" aria-label="Progress chart"></svg>
+          <div class="rates" id="rates"></div>
+          <p class="note">Your records are saved on this device only.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
